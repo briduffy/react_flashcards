@@ -29,7 +29,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">React Flashcards</h1>
+          <h1 className="App-title">React Flaschards</h1>
         </header>
         {this.cardsLoop()}
         <CardForm addCard={this.addCard}/>
