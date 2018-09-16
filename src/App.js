@@ -14,7 +14,9 @@ class App extends Component {
 
   cardsLoop = () => {
     return this.state.cards.map(card => {
-      return <Card card={card}/>
+      return <Card
+        card={card}
+        deleteCard={this.deleteCard}/>
     })
   }
 
@@ -35,7 +37,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">React Flaschards</h1>
         </header>
-        <CardForm addCard={this.addCard}/>
+        <CardForm addCard={this.addCard}/>    
         {this.cardsLoop()}
       </div>
     );

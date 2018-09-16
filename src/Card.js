@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import App from './App'
 
 class Card extends Component {
   state = {
-    flipped: false
+    flipped: false,
   }
 
   flipCard = () => {
@@ -17,7 +18,11 @@ class Card extends Component {
     return (
       <div onClick={this.flipCard}>
         { flipped ? back : front }
-
+        <button onClick={this.deleteCard}>X</button>
+        <Card
+          card={card}
+          deleteCard={this.deleteCard}
+        />
       </div>
     )
   }
