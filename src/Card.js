@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import App from './App'
 
 class Card extends Component {
   state = {
@@ -21,7 +20,7 @@ class Card extends Component {
         <button onClick={this.deleteCard}>X</button>
         <Card
           card={card}
-          deleteCard={this.deleteCard}
+          deleteCard={this.props.deleteCard}
         />
       </div>
     )

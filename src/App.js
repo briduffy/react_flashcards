@@ -15,6 +15,7 @@ class App extends Component {
   cardsLoop = () => {
     return this.state.cards.map(card => {
       return <Card
+        key={card.id}
         card={card}
         deleteCard={this.deleteCard}/>
     })
@@ -28,6 +29,7 @@ class App extends Component {
   }
 
   deleteCard(id) {
+    const { card } = this.state
     this.setState({cards: this.state.cards.filter(card => card.id !== id)})
   }
 
