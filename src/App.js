@@ -28,8 +28,7 @@ class App extends Component {
     id: id + 1 })
   }
 
-  deleteCard(id) {
-    const { card } = this.state
+  deleteCard = (id) => {
     this.setState({cards: this.state.cards.filter(card => card.id !== id)})
   }
 
@@ -37,7 +36,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">React Flaschards</h1>
+        <h1 className="App-title">React Flaschards</h1>
         </header>
         <CardForm addCard={this.addCard}/>    
         {this.cardsLoop()}

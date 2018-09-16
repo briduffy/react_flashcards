@@ -15,13 +15,11 @@ class Card extends Component {
     // const { card: { front, back }, cool } = this.props;
     
     return (
-      <div onClick={this.flipCard}>
-        { flipped ? back : front }
-        <button onClick={this.deleteCard}>X</button>
-        <Card
-          card={card}
-          deleteCard={this.props.deleteCard}
-        />
+      <div>
+        <div onClick={this.flipCard}>
+          { flipped ? back : front }
+        </div>
+        <button onClick={() => this.props.deleteCard(this.props.card.id)}>X</button>
       </div>
     )
   }
