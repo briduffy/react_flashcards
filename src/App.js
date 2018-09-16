@@ -5,10 +5,10 @@ import CardForm from './CardForm';
 class App extends Component {
   state = {
     cards: [
-      {front: 'Is Spencer the man?', back: 'Yes.'},
-      {front: 'Is Javascript impossible?', back: 'Maybe.'},
-      {front: 'La Croix or Dr. Pepper?', back: 'La Croix.'},
-      {front: 'Is Brittanie the queen of of DevPoint Labs?', back: 'Obviously.'}
+      {id: 1, front: 'Is Spencer the man?', back: 'Yes.'},
+      {id: 2, front: 'Is Javascript impossible?', back: 'Maybe.'},
+      {id: 3, front: 'La Croix or Dr. Pepper?', back: 'La Croix.'},
+      {id: 4, front: 'Is Brittanie the queen of of DevPoint Labs?', back: 'Obviously.'}
     ]
   }
 
@@ -18,11 +18,15 @@ class App extends Component {
     })
   }
 
-
   addCard = (front, back ) => {
-    const { cards } = this.state
-    const card = { front, back, flipped: false }
-    this.setState ({ cards: [card, ...cards] })
+    const { cards, id } = this.state
+    const card = { id, front, back, flipped: false }
+    this.setState ({ cards: [card, ...cards],
+    id: id + 1 })
+  }
+
+  deleteCard(id) {
+    this.setState({cards: this.state.cards.filter(card => card.id !== id)})
   }
 
   render() {
@@ -31,8 +35,8 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">React Flaschards</h1>
         </header>
-        {this.cardsLoop()}
         <CardForm addCard={this.addCard}/>
+        {this.cardsLoop()}
       </div>
     );
   }

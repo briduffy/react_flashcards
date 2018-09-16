@@ -17,6 +17,7 @@ class Card extends Component {
     return (
       <div onClick={this.flipCard}>
         { flipped ? back : front }
+
       </div>
     )
   }

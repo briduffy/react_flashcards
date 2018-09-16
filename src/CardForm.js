@@ -3,7 +3,7 @@ import React from 'react'
 class CardForm extends React.Component {
   state = { front: '', back: ''}
 
-  handleSumbit = (e) => {
+  handleSubmit = (e) => {
     e.preventDefault()
     const { front, back } = this.state
     this.props.addCard(front, back)
