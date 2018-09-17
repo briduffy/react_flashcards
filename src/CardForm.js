@@ -36,7 +36,7 @@ class CardForm extends React.Component {
         placeholder="...back of card."
       />
       <br />
-      <button>Add Card</button>
+      <button className="btn">Add Card</button>
       </form>
     )
   }

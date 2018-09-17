@@ -19,7 +19,7 @@ class Card extends Component {
         <div onClick={this.flipCard}>
           { flipped ? back : front }
         </div>
-        <button onClick={() => this.props.deleteCard(this.props.card.id)}>X</button>
+        <button onClick={() => this.props.deleteCard(this.props.card.id)}>Delete</button>
       </div>
     )
   }

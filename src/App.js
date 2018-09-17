@@ -34,12 +34,14 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="container">
         <header className="App-header">
-        <h1 className="App-title">React Flaschards</h1>
+        <h1 className="center">React Flaschards</h1>
         </header>
-        <CardForm addCard={this.addCard}/>    
-        {this.cardsLoop()}
+        <div className="center">
+          <CardForm addCard={this.addCard}/>    
+          {this.cardsLoop()}
+        </div>
       </div>
     );
   }
